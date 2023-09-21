@@ -2,11 +2,15 @@ import "./Products.css";
 import { AddToCartIcon, RemoveFromCartIcon } from "./Icons";
 import React from "react";
 import { ContextState } from "../context/contextProvider";
+import { useFilter } from "../hooks/useFilter";
 
-export function Products({ products }) {
-  const { cart, addToCart, removeFromCart } = React.useContext(ContextState);
+export function Products() {
+  const { state, addToCart, removeFromCart } = React.useContext(ContextState);
+
+  const products = useFilter();
+
   const isInTheCart = (item) => {
-    const isThere = cart.some((el) => el.id == item.id);
+    const isThere = state.some((el) => el.id == item.id);
     return isThere;
   };
 

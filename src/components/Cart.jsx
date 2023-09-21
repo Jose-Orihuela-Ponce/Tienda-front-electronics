@@ -5,7 +5,7 @@ import { ContextState } from "../context/contextProvider";
 
 export function Cart() {
   const cartCheckboxId = React.useId();
-  const { cart, addToCart, clearCart } = React.useContext(ContextState);
+  const { state, addToCart, clearCart } = React.useContext(ContextState);
 
   return (
     <>
@@ -16,10 +16,10 @@ export function Cart() {
 
       <aside className="cart">
         <ul>
-          {cart.length == 0 ? (
+          {state.length == 0 ? (
             <p>No hay nada en tu carrito</p>
           ) : (
-            cart.map((el) => (
+            state.map((el) => (
               <li key={el.id}>
                 <img src={el.thumbnail} alt={el.title} />
                 <div>

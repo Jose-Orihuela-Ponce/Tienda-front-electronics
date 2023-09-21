@@ -1,8 +1,9 @@
 import { products as initialProducts } from "../mocks/products.json";
 import React from "react";
 import { ContextState } from "../context/contextProvider";
+
 export const useFilter = () => {
-  const { filters, setFilters } = React.useContext(ContextState);
+  const { filters } = React.useContext(ContextState);
 
   const filterdProducts = initialProducts.filter((prod) => {
     if (prod.price >= filters.minPrice) {
@@ -13,5 +14,5 @@ export const useFilter = () => {
       }
     }
   });
-  return { filterdProducts, setFilters };
+  return filterdProducts;
 };
