@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react-swc';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: 'https://github.com/Jose-Orihuela-Ponce/Tienda-front-electronics'
+  base: 'https://jose-orihuela-ponce.github.io/Tienda-front-electronics'
 });
